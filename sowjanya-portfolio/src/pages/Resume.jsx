@@ -31,6 +31,9 @@ function Resume() {
                 <li>HTML</li>
                 <li>CSS</li>
             </ul>
+
+            <h2>Resume Link</h2>
+            <p><a href="https://example.com/resume.pdf">Download Resume</a></p>
         </div>
     );
 }

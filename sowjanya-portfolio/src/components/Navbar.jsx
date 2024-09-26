@@ -1,60 +1,36 @@
 import React from 'react';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import './Navbar.css';  // Ensure the CSS file is in the right location
 
-function Navbar() {
-  return (
-    <nav style={{
-      display: 'flex',
-      justifyContent: 'center',
-      backgroundColor: '#333',
-      padding: '1rem',
-      position: 'fixed', // Fix navbar at the top
-      top: 0,            // Align it at the top
-      left: 0,
-      width: '100%',      // Make it stretch across the full width of the page
-      zIndex: 1000        // Make sure it's above other content
-
-    }}>
-      <ul style={{
-        display: 'flex',
-        listStyle: 'none',
-        padding: 0,
-        margin: 0,
-      }}>
-        <li style={{ margin: '0 15px' }}>
-          <a href="#home" style={linkStyle}>Home</a>
-        </li>
-        <li style={{ margin: '0 15px' }}>
-          <a href="#aboutme" style={linkStyle}>About Me</a>
-        </li>
-        <li style={{ margin: '0 15px' }}>
-          <a href="#contact" style={linkStyle}>Contact</a>
-        </li>
-        <li style={{ margin: '0 15px' }}>
-          <a href="#projects" style={linkStyle}>Projects</a>
-        </li>
-        <li style={{ margin: '0 15px' }}>
-          <a href="#technologies" style={linkStyle}>Technologies</a>
-        </li>
-        <li style={{ margin: '0 15px' }}>
-          <a href="#resume" style={linkStyle}>Resume</a>
-        </li>
-      </ul>
-    </nav>
-  );
+const NavBar = () => {
+    return (
+        <>
+            <Navbar collapseOnSelect expand="md"
+                fixed="top"
+                className="animate-navbar nav-theme justify-content-between"
+                variant="dark">
+                <Navbar.Brand href="#Home">
+                <img 
+            src="logo.jpg" 
+            alt="Logo" 
+            className="h-2 w-2 ml-4 rounded-full"
+          />
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="ml-auto">
+                        <Nav.Link href="#Home">Home</Nav.Link>
+                        <Nav.Link href="#Aboutme">About Me</Nav.Link>
+                        <Nav.Link href="#Technologies">Technologies</Nav.Link>
+                        <Nav.Link href="#Projects">Projects</Nav.Link>
+                        <Nav.Link href="#Resume">Resume</Nav.Link>
+                        <Nav.Link href="#Contact">Contact</Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar>
+        </>
+    )
 }
 
-const linkStyle = {
-  color: '#fff',
-  textDecoration: 'none',
-  fontWeight: 'bold',
-  padding: '0.5rem 1rem',
-  transition: 'color 0.3s ease',
-};
-
-const linkHoverStyle = {
-  ...linkStyle,
-  color: '#ffcc00',
-};
-
-// Expor
-export default Navbar;
+export default NavBar;
